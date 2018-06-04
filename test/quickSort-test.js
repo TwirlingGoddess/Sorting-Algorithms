@@ -1,6 +1,8 @@
 import {assert} from 'chai';
 import quickSort from '../lib/quickSort.js';
 
+const array = [10, 2, 3, 9, 190, 43, 21, 8,]
+
   describe('test', function() {
     it('should return true', function() {
       assert.equal(true, true);
