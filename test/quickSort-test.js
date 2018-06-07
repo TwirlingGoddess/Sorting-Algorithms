@@ -1,23 +1,52 @@
-import {assert} from 'chai';
+import { expect } from 'chai';
 import quickSort from '../lib/quickSort.js';
+import splitOrganizer from '../lib/quickSort.js';
 
-const array = [10, 2, 3, 9, 190, 43, 21, 8,]
+const assert = require('chai').assert;
+const bubbleSort = require('../lib/bubbleSort.js');
+const generateRandomNumbers = require('../lib/randomArray.js');
 
-  describe('test', function() {
-    it('should return true', function() {
-      assert.equal(true, true);
+describe('bubbleSort', function() {
+  let array;
+  beforeEach(() => {
+    array = [9, 6, 3, 4, 8, 7, 2, 5];
+  })
+
+  it('should be a function', function() {
+    assert.isFunction(bubbleSort)
+  })
+
+  it('should have an array', function() {
+    assert(Array.isArray(array));
+  })
+
+  it('should sort an array of numbers', function() {
+    bubbleSort(array)
+    assert.deepEqual(bubbleSort(array), [2, 3, 4, 5, 6, 7, 8, 9]);
+  })
+
+  it('should sort negative numbers', function() {
+    let array = [-3, -6, -2, -1, -7];
+
+    assert.deepEqual(array, [-3, -6, -2, -1, -7])
+    assert.deepEqual(bubbleSort(array), [-7, -6, -3, -2, -1])
+  })
+
+  it('should sort a very large random array', function() {
+      let random = generateRandomNumbers(1501, 1500) //1000001, 1000000
+      let sortedArray = bubbleSort(random);
+
+      for(let i = 0; i < sortedArray.length-1; i++) {
+      assert.equal(sortedArray[i] <= sortedArray[i + 1], true);
+    };
+  })
+    
+    it('should sort an array of letters'), function() {
+      expect([r, e, a, t, a, l, r]).toEqual([a, a, e, l, r, r, t])
     });
     
-    it('should take an array', function() {
-      assert.equal(quickSort.array, []);
-    })
+    it('should sort an array of words'), function() {
+      expect().toEqual()
+    });
+
   });
-  // should be a function
-  // should return an array
-  // should return an array of the same length
-  // should sort a array of numbers
-  // should sort a array of letters
-  // should sort a array of words
-  // should sort a array of arrays numbers
-  // should sort a array of arrays words
-  // should sort a large array

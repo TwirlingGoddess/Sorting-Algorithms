@@ -1,23 +1,43 @@
-import {assert} from 'chai';
+import { expect } from 'chai';
 import insertionSort from '../lib/insertionSort.js';
 
-const unSortedArray = [1, 5, 7, 9];
+const unSortedArray = [7, 5, 1, 9];
 
   describe('test', function() {
-    it('should return true', function() {
-      assert.equal(true, true);
-    });
-    it('should take an array', function() {
-      assert.equal(insertionSort.array, []);
+    it('should be a function', function() {
+      expect(true).toEqual(true);
     });
 
-})
-  // should be a function
-  // should return an array
-  // should return an array of the same length
-  // should sort a array of numbers
-  // should sort a array of letters
-  // should sort a array of words
-  // should sort a array of arrays numbers
-  // should sort a array of arrays words
-  // should sort a large array
+    it('should return an array', function() {
+      expect(insertionSort.array).toEqual([]);
+    });
+
+    it('should return an array of the same length', function() {
+      expect(unSortedArray.length).toEqual(insertionSort.array.length)
+    });
+
+    it('should sort an array of numbers', function() {
+      expect([7, 5, 1, 9]).toEqual([1, 5, 7, 9])
+    });
+    
+    it('should sort an array of letters'), function() {
+      expect().toEqual()
+    });
+    
+    it('should sort an array of words'), function() {
+      expect().toEqual()
+    });
+    
+    it('should sort an array of arrays numbers'), function() {
+      expect().toEqual()
+    });
+    
+    it('should sort an array of arrays words'), function() {
+      expect().toEqual()
+    });
+    
+    it('should sort a large array'), function() {
+      expect().toEqual()
+    });
+
+});
